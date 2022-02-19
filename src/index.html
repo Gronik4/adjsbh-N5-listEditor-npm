@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>List editor</title>
+</head>
+<body>
+  <div class="container">
+    <h3>List editor</h3>
+    <div class="editor">
+      <div class="editor-head">
+        <h4 class="head_text">товары</h4>
+        <h4 class="head_add">добавить</h4>
+      </div>
+      <table id="et" class="editT">
+        <tr><th class="left">название</th><th>стоимость</th><th colspan="2">действия</th></tr>
+      </table>
+      <form id="pop" class="popov show" data-edit="a">
+        <label>Название<br>
+          <input type="text" id="name" class="inp" name="name" required>
+        </label><br>
+        <label>Стоимость<br>
+          <input id="price" class="inp" name="price" required>
+        </label>
+        <div class="block_button">
+          <button id="sav" class="but" type="submit">Сохранить</button>
+          <button id="can" class="but" type="reset">Отмена</button>
+        </div>
+      </form>
+      <div class="error erShow">
+        <p class="error-text"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
