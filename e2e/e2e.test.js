@@ -1,13 +1,13 @@
-import { puppeteer } from "puppeteer";
+import  puppeteer  from 'puppeteer';
 import { fork } from 'child_process';
 
-jest.setTimeout(90000);
+jest.setTimeout(30000);
 describe('test Popap form', () =>{
   let browser = null;
   let page = null;
   let server = null;
   const baseUrl = 'http://localhost:9000';
-  
+
   beforeAll(async () => {
     server = fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
@@ -29,7 +29,7 @@ describe('test Popap form', () =>{
  
   test('test show and close popap', async () => {
     await page.goto(baseUrl);
-    const buttAdd = await page.$(`[class = head_add]`);
+    const buttAdd = await page.$('[class = head_add]');
     buttAdd.click();
     const inputName = await page.$('[id = name]');
     inputName.type('Poco X3 pro');
@@ -43,4 +43,4 @@ describe('test Popap form', () =>{
   afterAll(async () => {
     await browser.close();
   });
-})
+});
