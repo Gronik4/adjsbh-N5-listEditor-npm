@@ -7,10 +7,7 @@ import {
 const table = document.getElementById('et');
 function drowList() {
   const allEntry = document.querySelectorAll('.tr');
-  allEntry.forEach((i) => {
-    const item = i.parentElement;
-    item.remove();
-  });
+  allEntry.forEach((i) => {i.parentElement.remove();});
   for (let i = 0; i < arrName.length; i += 1) {
     const insert = `<tr class="tr" data-id="${i}"><td class="left">${arrName[i]}</td><td class="numb">${arrCost[i]}</td><td class="R"><img class="img" src="${pencil}"></td><td class="L">X</td></tr>`;
     table.innerHTML += insert;

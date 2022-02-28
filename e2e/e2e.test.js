@@ -20,7 +20,7 @@ describe('test Popap form', () =>{
     });
 
     browser = await puppeteer.launch({
-      // headless: false, // show
+      headless: false, // show
       // slowMo: 100,
       // devtools: true, // show devTools
     });
@@ -30,14 +30,14 @@ describe('test Popap form', () =>{
   test('test show and close popap', async () => {
     await page.goto(baseUrl);
     const buttAdd = await page.$('[class = head_add]');
-    buttAdd.click();
+    await buttAdd.click();
     const inputName = await page.$('[id = name]');
-    inputName.type('Poco X3 pro');
+    await inputName.type('Poco X3 pro');
     const inputCost = await page.$('[id = price]');
-    inputCost.type('25000');
+    await inputCost.type('25000');
     const saving = await page.$('[id = sav]');
-    saving.click();
-    await page.waitForSelector('[id = name].valid');
+    await saving.click();
+    page.waitForSelector('[data-id]');
   });
 
   afterAll(async () => {
