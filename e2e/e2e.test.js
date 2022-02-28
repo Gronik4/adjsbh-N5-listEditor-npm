@@ -20,7 +20,7 @@ describe('test Popap form', () =>{
     });
 
     browser = await puppeteer.launch({
-      headless: false, // show
+      headless: true, // show
       // slowMo: 100,
       // devtools: true, // show devTools
     });
